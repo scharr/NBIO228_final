@@ -1,9 +1,22 @@
-setwd("/Users/alex/Desktop/Analysis/MathToolsProject/data")
+#June 2015
+
+# Set working directory:
+
+# Uncomment the line below to set the working directory when directly sourcing the file
+#script.dir <- dirname(sys.frame(1)$ofile)
+#setwd(script.dir)
+
+# Uncomment the line below to set the working directory when running or sourcing the file in RStudio
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+
+# You may also set the working directory manually by editing the file path below and uncommenting the line
+#setwd("/Users/alex/Desktop/Analysis/MathToolsProject/data")
+
 
 # read episode into workspace as 1000 element (frame) list
 library(tiff)
-epi <- readTIFF("SingleEpiCropped_AS.tif", all = TRUE)
-#epi <- readTIFF("test.tif", all = TRUE)
+epi <- readTIFF("../data/SingleEpiCropped_AS.tif", all = TRUE)
+#epi <- readTIFF("../data/test.tif", all = TRUE)
 
 library(polynom)
 # create empty list to hold xy coordinates of bundles in each frame
